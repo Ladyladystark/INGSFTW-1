@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.SignUpController">
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <children>
+      <TextField fx:id="user" layoutX="176.0" layoutY="87.0" />
+      <PasswordField fx:id="password" layoutX="176.0" layoutY="158.0" />
+      <PasswordField fx:id="check" layoutX="176.0" layoutY="225.0" />
+      <Button layoutX="46.0" layoutY="362.0" mnemonicParsing="false" onAction="#Back" text="Back" />
+      <Button layoutX="213.0" layoutY="388.0" mnemonicParsing="false" onAction="#Sign" text="Sign Up" />
+      <Text layoutX="46.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imetti Username:" wrappingWidth="90.13672637939453" />
+      <Text layoutX="46.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imetti Password:" wrappingWidth="90.13672637939453" />
+      <Text layoutX="32.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Re-Imetti Password:" wrappingWidth="118.13672637939453" />
+      <Label fx:id="label" layoutX="101.0" layoutY="414.0" prefHeight="18.0" prefWidth="363.0" />
+   </children>
+</AnchorPane>
