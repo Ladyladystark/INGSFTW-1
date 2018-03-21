@@ -37,12 +37,12 @@ import server.ServerInterface;
 
 public class LoginController implements EventHandler<ActionEvent> {
 	Socket clsock = null;
-	
-	
+
+
 	static Socket socket;
 	static BufferedReader read;
 	static PrintWriter output;
-	
+
 	@FXML
 	private Label label; // label login
 
@@ -54,9 +54,9 @@ public class LoginController implements EventHandler<ActionEvent> {
 
 	@FXML
 	private ChoiceBox<String> selec;
-	
 
-	
+
+
 	JSONObject txt;
 
 
@@ -96,37 +96,46 @@ public class LoginController implements EventHandler<ActionEvent> {
 				Stage stage = new Stage();
 				stage.setScene(scene);
 				stage.show();
-				
+
 			}
 			else
 				label.setText("Login Error!!!");
 		}	
 		//caso Socket
 		else {	
-			
-				final InetAddress URL = InetAddress.getLocalHost();
-				final  int PORT = 3333;
-				clsock = new Socket(URL,PORT);
-			
+
+			final InetAddress URL = InetAddress.getLocalHost();
+			final  int PORT = 3333;
+			clsock = new Socket(URL,PORT);
+
 			//mando i dati al server
-			
-			if(loginSocket(clsock))
-				label.setText("bella");
-		clsock.close();
+
+			if(loginSocket(clsock)) {
+				//se il login ha avuto successo nascono il login
+				((Node) ev.getSource()).getScene().getWindow().hide();
+				//apro la home
+				Parent root = FXMLLoader.load(getClass().getResource("/menprinc/Home.fxml"));
+				Scene scene = new Scene(root);
+				Stage stage = new Stage();
+				stage.setScene(scene);
+				stage.show();
+			}
+			else	
+				clsock.close();
 		} // fine else
 
 	}
 
 	private boolean loginSocket(Socket client) throws Exception {
 		output = new PrintWriter(new OutputStreamWriter(clsock.getOutputStream()));
-		
+
 
 
 		//mando il nome al server
 		output.println(nome.getText());
 
-		
-		
+
+
 
 		//mando la password al server
 		output.println(passs.getText());
@@ -140,7 +149,7 @@ public class LoginController implements EventHandler<ActionEvent> {
 
 		if(Risposta.equals("true"))
 			return true;
-		
+
 		return false;
 	}
 
@@ -156,6 +165,6 @@ public class LoginController implements EventHandler<ActionEvent> {
 		stage.setScene(scene);
 		((Node) ev.getSource()).getScene().getWindow().hide();
 		stage.show();
-		
+
 	}
 }

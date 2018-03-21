@@ -1,5 +1,6 @@
 package menprinc;
 
+import client.LoginController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -8,7 +9,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Home {
-	/*public void anag(ActionEvent ev) throws Exception {
+	public void anag(ActionEvent ev) throws Exception {
 		((Node) ev.getSource()).getScene().getWindow().hide();
 		Parent root = FXMLLoader.load(getClass().getResource("/anagrafica/Anag.fxml"));
 		Scene scene = new Scene(root);
@@ -16,18 +17,16 @@ public class Home {
 		stage.setScene(scene);
 		stage.show();
 		
-	}*/
+	}
 	
 	public void logout(ActionEvent ev) throws Exception {
 		((Node) ev.getSource()).getScene().getWindow().hide();
-		Parent root = FXMLLoader.load(getClass().getResource("/client/Login.fxml"));
-		Scene scene = new Scene(root);
+		LoginController C = new LoginController();
 		Stage stage = new Stage();
-		stage.setScene(scene);
-		stage.show();
+		C.initialize(stage);
 		
 	}
-	/*public void gite(ActionEvent ev) throws Exception {
+	public void gite(ActionEvent ev) throws Exception {
 		((Node) ev.getSource()).getScene().getWindow().hide();
 		Parent root = FXMLLoader.load(getClass().getResource("/gita/Gita.fxml"));
 		Scene scene = new Scene(root);
@@ -45,5 +44,5 @@ public class Home {
 		stage.show();
 		
 	}
-	*/
+	
 }

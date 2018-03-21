@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -11,34 +8,13 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="444.0" prefWidth="417.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="menprinc.Home">
    <children>
       <Button layoutX="346.0" layoutY="7.0" minWidth="46.0" mnemonicParsing="false" onAction="#logout" prefHeight="46.0" prefWidth="64.0" style="-fx-background-radius: 50000;" text="LogOut" />
-      <Button layoutY="324.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="420.0" text="Button" />
-      <ImageView fitHeight="122.0" fitWidth="420.0" layoutX="-1.0" layoutY="324.0">
-         <image>
-            <Image url="@viaggi.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="-7.0" layoutY="192.0" mnemonicParsing="false" prefHeight="130.0" prefWidth="426.0" text="Mensa" />
-      <ImageView fitHeight="129.0" fitWidth="420.0" layoutY="193.0" pickOnBounds="true">
-         <image>
-            <Image url="@mensa.jpg" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
+      <Button layoutY="324.0" mnemonicParsing="false" onAction="#gite" prefHeight="122.0" prefWidth="420.0" text="Gite" />
+      <Button layoutX="-7.0" layoutY="192.0" mnemonicParsing="false" onAction="#mensa" prefHeight="130.0" prefWidth="426.0" text="Mensa" />
       <Text layoutX="8.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome in Child Care Tech Home" wrappingWidth="344.53673934936523">
          <font>
             <Font name="Jokerman" size="19.0" />
          </font></Text>
-      <Button layoutX="-1.0" layoutY="69.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="420.0" text="Sezione Anagrafica" />
-      <ImageView fitHeight="122.0" fitWidth="420.0" layoutX="-1.0" layoutY="70.0" pickOnBounds="true">
-         <image>
-            <Image url="@bambini.jpg" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
+      <Button layoutX="-1.0" layoutY="69.0" mnemonicParsing="false" onAction="#anag" prefHeight="122.0" prefWidth="420.0" text="Sezione Anagrafica" />
       <Text layoutX="5.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sezione Anagrafica" wrappingWidth="407.58313179016113">
          <font>
             <Font name="System Bold" size="17.0" />

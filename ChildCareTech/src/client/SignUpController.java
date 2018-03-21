@@ -46,13 +46,13 @@ public class SignUpController {
 		Registry registry = LocateRegistry.getRegistry();
 		ServerInterface MainFrame = (ServerInterface) registry.lookup(remoteObjectName);
 		}
-		if(!user.getText().isEmpty()) {
+		if(!user.getText().isEmpty() && user.getText().equals(user.getText().replaceAll(" ", ""))) {
 			
 		if(d.Repeat(user.getText()))
 			//nome già presente
 			label.setText("Nome utente già in uso");
 		else {
-			if(password.getText().equals(check.getText()) ) {
+			if(password.getText().equals(check.getText())  ) {
 				if((password.getText().isEmpty())) {
 					label.setText("La password non può essere vuota");
 				}
@@ -72,7 +72,7 @@ public class SignUpController {
 		}
 		}
 		else
-			label.setText("Username non può essere vuoto");
+			label.setText("Username non può essere vuoto/ o contenere spazi");
 			
 	}
 	public void Back(ActionEvent ev) throws Exception {
