@@ -6,7 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import anagrafica.Bimbo;
 import database.datalog;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class datalog {
 	//private final int PORT = 3306;
@@ -125,4 +128,39 @@ public class datalog {
 
 
 	}
+	
+	
+	public ObservableList<Bimbo> ListaBimbi() throws Exception {
+		String r = "SELECT * FROM login.bambini";
+
+		PreparedStatement state = conn.prepareStatement(r);
+		ResultSet res = state.executeQuery();
+		ObservableList<Bimbo> list = FXCollections.observableArrayList();
+		while(res.next()) {
+		
+			Bimbo bimbo = new Bimbo();
+			bimbo.setNome(res.getString("Nome"));
+		
+			bimbo.setCognome(res.getString("Cognome"));
+			//bimbo.setBirthday(res.getLocDate("Compleanno")); BOH!!!
+			bimbo.setCf(res.getString("Codicefiscale"));
+			bimbo.setLuogoNascita(res.getString("LuogoDiNascita"));
+			list.add(bimbo);
+		
+			
+		}
+		return list;	
+		
+	}
+
+	public void InsetChild(String nome, String cognome, String luogodiNascita, String Cf) throws SQLException {
+		String query = "INSERT INTO login.bambini (Nome,Cognome,Codicefiscale,LuogoDiNascita) VALUES ('"+nome+"','"+cognome+"','"+luogodiNascita+"','"+Cf+"') ";
+		PreparedStatement state = conn.prepareStatement(query);
+		state.executeUpdate();
+		
+	
+	
+	}
+
 }
+
