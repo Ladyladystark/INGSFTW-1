@@ -16,6 +16,7 @@ public class Home {
 		Stage stage = new Stage();
 		stage.setScene(scene);
 		stage.show();
+
 		
 	}
 	

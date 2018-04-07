@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</AnchorPane>
 
+<AnchorPane prefHeight="300.0" prefWidth="300.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="anagrafica.Anag">
+   <children>
+      <Button layoutX="57.0" layoutY="59.0" mnemonicParsing="false" onAction="#VediBambini" prefHeight="41.0" prefWidth="171.0" text="Bambini" />
+   </children>
+</AnchorPane>
